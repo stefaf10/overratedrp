@@ -5,8 +5,7 @@ module.exports = {
     description: 'Returns information about the server.',
     async execute(interaction) {
         const guild = interaction.guild
-
-    const owner = interaction.guild.fetchOwner()    
+        
     let guildDescription = guild.description
     if (!guildDescription) {
       guildDescription = 'None'
