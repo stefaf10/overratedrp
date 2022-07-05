@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@discordjs/opus": "^0.8.0",
+    "@discordjs/voice": "^0.10.0",
+    "ascii-table": "^0.0.9",
+    "discord.js": "^13.8.1",
+    "moment": "^2.29.3",
+    "quick.db": "^7.1.3"
+  }
+}
