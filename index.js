@@ -115,6 +115,28 @@ client.on('guildMemberAdd', member => {
 });
 
 
+const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
+
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	if (interaction.commandName === 'ping') {
+		const row = new MessageActionRow()
+			.addComponents(
+				// ...
+			);
+
+		const embed = new MessageEmbed()
+			.setColor('#0099ff')
+			.setTitle('Some title')
+			.setURL('https://discord.js.org')
+			.setDescription('Some description here');
+
+		await interaction.reply({ content: 'Pong!', ephemeral: true, embeds: [embed], components: [row] });
+	}
+});
+
+
 
 
 client.login(TOKEN);
