@@ -137,6 +137,24 @@ client.on('interactionCreate', async interaction => {
 });
 
 
+client.on('message', async (message) => {
+    if (message.author.bot)return;
+    if (message.channel.id === '1051424229167476767') {
+        message.delete()
+        const channel = message.guild.channels.cache.get('1038755519806058547')
+        const cont = message.content;
+        const embed = new Discord.MessageEmbed()
+        .setAuthor('Suggestion System', 'https://media.discordapp.net/attachments/997919316622184519/1041007414692028456/logo.gif')
+        .setDescription(`\`\`\`${cont}\`\`\``)
+        .setColor('BLACK')
+        .setTimestamp()
+        channel.send(embed).then(message=> {
+            message.react('✅')
+            message.react('❌')
+        })
+    }
+})
+
 
 
 client.login(TOKEN);
